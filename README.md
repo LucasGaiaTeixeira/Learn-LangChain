@@ -31,6 +31,7 @@ PAcotes e oque eles fazem:
 
     langhain-google-genai
     langchain-groq
+    "langgraph-cli[inmem]"  = vai ser intalado o langgraph-cli -> langgraph api, uvicorn, langgraph-runtime tendo que esse[inmem ] e uma serie de pacotes a mais para serem intalados alem do langgraph-cli padrao
 
 
 NO LCE: trabalhamos com runnable, ele e uma classe abstrata, que se deve ser somente herdada, e quer dizer:
@@ -49,3 +50,15 @@ No caso o outuput ai ser igual ao input sempre em todos os caso, e mais como tud
 Pipeline != agente
 
 pipeline = manda uma pergunta e recebe uma resposta
+
+langgraph dev = ele abre uma UI para o modelo de agente de IA que passou, mas se deve criar o seguinte arquivo para criar a pasta .langgraph_api que e UI
+    cria um arquivo chamado langgraph.json
+        {
+        "dependencies": [
+            "."
+        ],
+        "graphs": {
+            "agent": "diretorio Arquivo agente":"nome do agente criado"
+        },
+        "env": ".env" # esse e o seu .env
+        }
